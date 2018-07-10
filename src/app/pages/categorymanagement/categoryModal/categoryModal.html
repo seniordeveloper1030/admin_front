@@ -1,0 +1,32 @@
+<form style="text-align: left" name="categoryForm"  ng-submit="onOk()"> 
+<div class="modal-content">
+  <div class="modal-header bg-info">
+    <i  ng-class="{'ion-plus': categoryMode === 'Add', 'ion-edit': categoryMode === 'Edit'}"></i><span> Category</span>
+  </div>
+  <div class="modal-body text-center">
+      
+          <div class="form-group row">
+
+                  <div class="userpic" style="margin-left: 45px;">
+                    <div class="userpic-wrapper" ng-click="uploadPicture()">
+                      <img ng-src="{{ categoryInfo.picture }}" >
+                    </div>
+                    <i class="ion-ios-close-outline" ng-click="removePicture()" ng-if="isLoadPicture()"></i>
+                    <a href class="change-userpic" ng-click="uploadPicture()">Upload Category Picture</a>
+                    <input type="file" ng-show="false" name="file" id="uploadFile" ng-file-select="onFileSelect($files)">
+                  </div>
+ 
+              
+          </div>
+          <div class="form-group row" style="padding:16px;padding-bottom: 0px">
+              <input type="text" class="form-control" placeholder="Name" name="name"  ng-model="categoryInfo.name" required>
+          </div>
+
+  
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-info" >OK</button>
+    <button type="button" class="btn btn-warning" ng-click="onCancel()">Cancel</button>
+  </div>
+</div>
+</form>

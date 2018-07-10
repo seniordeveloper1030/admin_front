@@ -1,0 +1,42 @@
+<div ba-panel ba-panel-class="profile-page">  
+    <div class="row">
+      <div class="col-md-12">
+      <div class="horizontal-scroll">
+    <div class="col-sm-4 col-xs-6" style="margin-bottom: 20px;margin-top: 20px;"><button type="button" ui-sref = "card({id:'new'})" ng-click="addCard()" class="btn btn-info btn-lg">Add</button></div>
+    <table class="table table-hover table-bordered">
+      <thead>
+      <tr class="black-muted-bg">
+        <th class="table-id">No</th>
+        <th >Name</th>
+        <th >Price</th>
+        <th>Location</th>
+        <th>Gender</th>
+        <th>Age Range</th>
+        <th>Age Restriction</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="item in cardsInfo">
+        <td class="table-id">{{$index + 1}}</td>
+        <td ng-click="gotoCard(item._id)" style="color:green;cursor: pointer;">{{item.cardName}}</td>
+        <td>{{item.cardPrice}}</td>
+        <td>{{item.cardLocation}}</td>
+        <td>{{item.cardGender}}</td>
+        <td>{{item.cardAgeRange}}</td>
+        <td>{{item.cardAgeRestriction}}</td>
+        <td>{{item.cardDescription}}</td>
+        <td>
+            <div>
+                <button class="btn btn-primary editable-table-button btn-sm"  ng-click="editCard(item._id)">Edit</button>
+                <button class="btn btn-danger editable-table-button btn-sm" data-toggle="modal" ng-click="removeCard($index)">Delete</button>
+            </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+  </div>
+  </div>

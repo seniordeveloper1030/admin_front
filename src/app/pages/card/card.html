@@ -1,0 +1,129 @@
+<div ba-panel ba-panel-class="profile-page">
+          <form class="row" name="cardForm">
+            <div class="col-md-6">
+                     <div class="panel-content">      
+                          <div class="form-group row clearfix">
+                            <label for="inputFirstName" class="col-sm-3 control-label">Card Picture</label>
+                  
+                            <div class="col-sm-9">
+                              <div class="userpic">
+                                <div class="userpic-wrapper" ng-click="uploadPicture()">
+                                    <img ng-src="{{ card.picture }}" >
+                                </div>
+                                <i class="ion-ios-close-outline" ng-click="removePicture()" ng-if="isLoadPicture()"></i>
+                                <a href class="change-userpic" ng-click="uploadPicture()">Upload Card Picture</a>
+                               <input required type="file" ng-show="false" name="file" id="uploadCardFile" custom-on-change="uploadFile"> 
+                              </div>
+                            </div>
+                          </div>
+                        </div>        
+              <div class="form-group row clearfix">
+                  <label for="inputFirstName" class="col-sm-3 control-label" >Category</label>
+        
+                  <div class="col-sm-9">
+                    <select required class="form-control" selectpicker ng-model="cardModel.categoryId">
+                      <option ng-repeat="item in categories" value="{{item._id}}">{{item.categoryName}}</option>
+                    </select>
+                  </div>
+              </div>                             
+              <div class="form-group row clearfix">
+                <label for="inputFirstName" class="col-sm-3 control-label" >Name</label>
+      
+                <div class="col-sm-9">
+                 <input required type="text" class="form-control" name="name" placeholder="" ng-model="cardModel.cardName">
+                </div>
+              </div>
+              <div class="form-group row clearfix">
+                <label for="inputLastName" class="col-sm-3 control-label">Price ($)</label>
+      
+                <div class="col-sm-9">
+                 <input required type="number" class="form-control" name="price" placeholder="" ng-model="cardModel.cardPrice">
+                </div>
+              </div>
+              <div class="form-group row clearfix">
+                    <label for="inputLastName" class="col-sm-3 control-label">Tags</label>
+                    <div class="col-sm-9">
+                     <input required type="text" class="form-control" name="tags" placeholder="" ng-model="cardModel.cardTags">
+                    </div>
+            </div>
+              <div class="form-group row clearfix">
+                    <label for="description" class="col-sm-3 control-label">Description</label>
+          
+                    <div class="col-sm-9">
+                      <textarea required class="form-control" name="description" placeholder="" ng-model="cardModel.cardDescription"></textarea>
+                    </div>
+             </div>
+              <div class="form-group row clearfix">
+                    <label for="inputLastName" class="col-sm-3 control-label">Location</label>
+          
+                    <div class="col-sm-9">
+                     <input required type="text" class="form-control" name="location" placeholder="" ng-model="cardModel.cardLocation">
+                    </div>
+             </div>
+                <div class="form-group row clearfix">
+                <label for="inputLastName" class="col-sm-3 control-label">Gender</label>
+        
+                <div class="col-sm-9">
+                        <select required class="form-control" selectpicker ng-model="cardModel.cardGender">
+                          <option>Male</option>
+                          <option>Female</option>
+                          <option>All</option>
+                        </select>
+                </div>
+                </div>
+                <div class="form-group row clearfix">
+                    <label for="inputLastName" class="col-sm-3 control-label">Age Range</label>
+            
+                    <div class="col-sm-9">
+                       <input required type="number" class="form-control" name="agerange" placeholder="" ng-model="cardModel.cardAgeRange" >
+                    </div>  
+                </div>
+                <div class="form-group row clearfix">
+                    <label for="inputLastName" class="col-sm-3 control-label">Age Restrictions</label>
+                    <div class="col-sm-9">
+                            <select required class="form-control" selectpicker ng-model="cardModel.cardAgeRestriction">
+                              <option>Adult</option>
+                              <option>Teen</option>
+                              <option>Kid Friendly</option>
+                            </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                    <div class="panel-content">      
+                            <div class="form-group row clearfix">
+                              <label for="inputFirstName" class="col-sm-3 control-label">Tips & Tricks Picture</label>
+                    
+                              <div class="col-sm-9">
+                                <div class="userpic">
+                                  <div class="userpic-wrapper">
+                                    <img ng-src="{{ card.tippicture }}" ng-click="uploadTipPicture()">
+                                  </div>
+                                  <i class="ion-ios-close-outline" ng-click="removeTipPicture()" ng-if="isLoadTipPicture()"></i>
+                                  <a href class="change-userpic" ng-click="uploadTipPicture()">Change Tips & Tricks Picture</a>
+                                 <input required type="file" ng-show="false" name="file1" id="uploadTipFile" custom-on-change="uploadFile"> 
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    
+                    <div class="form-group row clearfix">
+                            <label for="description" class="col-sm-3 control-label">Description</label>
+                  
+                            <div class="col-sm-9">
+                              <textarea required class="form-control" name="description" placeholder="" ng-model="cardModel.tipDescription"></textarea>
+                            </div>
+                     </div>
+                     <div class="form-group row clearfix">
+                        <div class="col-sm-12">
+                            <div class="progress-buttons-container text-center default-text">
+                                    <button ng-show="cardMode !== 3" progress-button="progressFunction()" class="btn btn-success" ng-disabled="!cardForm.$valid">Submit</button>
+                            </div>
+                        </div>
+                 </div>
+            </div>
+          </form>
+      
+         
+      </div>
+      

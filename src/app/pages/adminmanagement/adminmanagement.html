@@ -1,0 +1,42 @@
+<div class="widgets">
+
+    <form name="adminForm" class="row" ng-submit="submitAdmin()">
+      <div class="col-md-8 col-md-offset-2"
+           ba-panel
+           ba-panel-title="Admin Credentials"
+           ba-panel-class="with-scroll" style="margin-top: 150px">
+           <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="inputFirstName">Username</label>
+                <input type="text" class="form-control" name="oldusername" ng-model="admin.oldusername" readonly>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label class="checkbox-inline custom-checkbox nowrap" style="margin-bottom: 5px">
+                    <input type="checkbox" name="oldusername_checkbox" value="option1" ng-model="oldusername_checked">
+                    <span>New Username</span>
+                </label>
+                <input type="text" class="form-control" name="newusername" ng-model="admin.newusername" ng-disabled="!oldusername_checked">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="inputFirstName">Old Password</label>
+                <input type="password" class="form-control" name="oldpassword" ng-model="admin.oldpassword" required>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="inputWebsite">New Password</label>
+                <input type="password" class="form-control" name="newpassword" ng-model="admin.newpassword" required>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+</div>

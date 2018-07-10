@@ -1,0 +1,48 @@
+<div ba-panel>
+<div class="row">
+    <div class="col-md-12">
+<div class="horizontal-scroll ">
+  
+  <div  class="col-sm-12 col-xs-6" style="margin-bottom: 20px;margin-top: 20px;"><button type="button" ng-click="addCategory()" class="btn btn-success btn-lg">Add</button></div>
+  
+      <div class="categories">
+      <div class="col-md-3 col-lg-2" ng-repeat="item in metricsTableData">
+          <div class="panel panel-info contextual-example-panel bootstrap-panel"  style="height: 250px !important;">
+            <div class="panel-heading"><a ng-click="gotoCategory(event,item._id)" style="cursor: pointer;color: white;font-size: 15px;">{{item.categoryName}}</a>
+              <div style="float: right">
+                <span ng-click="editCategory($index)" class="glyphicon glyphicon-pencil" style="color: white;cursor: pointer;"></span>
+                <span ng-click="removeCategory($index)" class="glyphicon glyphicon-trash" style="color: white;cursor: pointer;margin-left: 5px"></span></div>
+              </div>
+            <div class="panel-body">
+                <img  width="200" height="180" ng-src="{{getURL(item.categoryIcon)}}">
+
+            </div>
+          </div>
+        </div>
+      </div>
+  <!-- <table class="table table-hover">
+    <thead>
+    <tr class="black-muted-bg">
+      <th class="browser-icons"></th>
+      <th style="width:20%">Category</th>
+      <th class="align-center" style="width:20%">Created At</th>
+      <th class="align-center" style="width:20%">Modified At</th>
+      <th class="align-right">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in metricsTableData" class="no-top-border"  style="cursor:pointer">
+      <td><img  width="20" height="20"></td>
+      <td ng-class="nowrap">{{item.categoryName}}</td>
+      <td >{{item.createdAt}}</td>
+      <td >{{item.updatedAt}}</td>
+      <td class="align-right">
+        
+      </td>
+    </tr>
+    </tbody>
+  </table> -->
+</div>
+</div>
+</div>
+</div>
